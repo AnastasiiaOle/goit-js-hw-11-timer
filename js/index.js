@@ -1,15 +1,15 @@
 const refs = {
-    dateId: document.querySelector('span[data-value="days"]'),
-    hoursId: document.querySelector('span[data-value="hours"]'),
-    minsId: document.querySelector('span[data-value="mins"]'),
-    secsId: document.querySelector('span[data-value="secs"]'), 
+    dateId: document.querySelector('[data-value="days"]'),
+    hoursId: document.querySelector('[data-value="hours"]'),
+    minsId: document.querySelector('[data-value="mins"]'),
+    secsId: document.querySelector('[data-value="secs"]'), 
   }
 
 
 class CountdownTimer {
- constructor ({onTick, targetDate}) {
+ constructor ({onTick, targetTime}) {
      this.intervalId = null;
-     this.targetDate = targetDate.getTime();
+     this.targetTime = targetTime.getTime();
      
      this.onTick = onTick;
      this.init();
@@ -61,7 +61,7 @@ function updateClockface({ days, hours, mins, secs }) {
 
 const timer = new CountdownTimer({
     onTick: updateClockface,
-    targetDate: new Date('Jul 30, 2021'),
+    targetTime: new Date('Jul 30, 2021'),
       });
 
   timer.setCountdown();
